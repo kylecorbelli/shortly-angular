@@ -2,17 +2,17 @@ angular.module('shortly.links', [])
 
 .controller('LinksController', function ($scope, Links) {
   // Your code here
+
+  $scope.data = {};
+
   $scope.getAll = function () {
     Links.getAll()
       .then(function (data) {
         console.log('links.js data: ', data);
-        $scope.data = data;
+        $scope.data.links = data;
         // console.log('$scope.links: ', $scope.links);
       });
   };
-
-
-
 
   $scope.addOne = function () {
     console.log($scope.newLink);

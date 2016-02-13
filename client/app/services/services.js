@@ -15,6 +15,7 @@ angular.module('shortly.services', [])
   // return {
   //   getLinks: getLinks
   // };
+
   var addOne = function (link) {
     console.log('got called and the link sent is ', link);
     return $http({
@@ -37,7 +38,7 @@ angular.module('shortly.services', [])
     })
     .then(function (links) {
       console.log('services.js data: ', links.data);
-      return links.data.data;
+      return links.data;
     });
   };
 
