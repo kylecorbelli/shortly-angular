@@ -4,16 +4,15 @@ angular.module('shortly.shorten', [])
   // Your code here
   $scope.link = {};
 
-  if(!Auth.isAuth()){
+  if (!Auth.isAuth()) {
     console.log('stay out my cookie jar');
-    $location.path('/signin')
+    $location.path('/signin');
   }
 
   $scope.addLink = function () {
     console.log($scope.newLink);
     Links.addOne($scope.newLink)
       .then(function (data) {
-        console.log('links.js then and the data is ', data);
       });
     // $scope.data.push($scope.newLink);
     //$scope.getAll();

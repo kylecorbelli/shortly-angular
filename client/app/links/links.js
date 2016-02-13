@@ -5,9 +5,9 @@ angular.module('shortly.links', [])
 
   $scope.data = {};
 
-  if(!Auth.isAuth()){
+  if (!Auth.isAuth()) {
     console.log('stay out my cookie jar');
-    $location.path('/signin')
+    $location.path('/signin');
   }
 
   $scope.getAll = function () {
