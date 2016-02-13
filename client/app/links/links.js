@@ -1,9 +1,14 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links) {
+.controller('LinksController', function ($scope, Links, Auth, $location) {
   // Your code here
 
   $scope.data = {};
+
+  if(!Auth.isAuth()){
+    console.log('stay out my cookie jar');
+    $location.path('/signin')
+  }
 
   $scope.getAll = function () {
     Links.getAll()
