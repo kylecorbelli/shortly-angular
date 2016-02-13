@@ -15,7 +15,7 @@ angular.module('shortly.services', [])
   // return {
   //   getLinks: getLinks
   // };
-  var addOne = function(link){
+  var addOne = function (link) {
     console.log('got called and the link sent is ', link);
     return $http({
       method: 'POST',
@@ -24,25 +24,25 @@ angular.module('shortly.services', [])
         url: link
       }
     })
-    .then(function(data) {
+    .then(function (data) {
       console.log('in the services.js addOne then and the data is ', data);
       return data;
     });
-  }; 
+  };
 
-  var getAll = function() {
+  var getAll = function () {
     return $http({
       method: 'GET',
       url: '/api/links'
     })
-    .then(function(links) {
+    .then(function (links) {
       console.log('services.js data: ', links.data);
       return links.data.data;
     });
   };
 
   return {
-    getAll: getAll, 
+    getAll: getAll,
     addOne: addOne
   };
 

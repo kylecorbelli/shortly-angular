@@ -19,11 +19,9 @@ angular.module('shortly', [
     .when('/', {
       templateUrl: 'app/links/links.html',
       controller: 'LinksController'
-    })
+    });
     // Your code here
-
-    //When /links --> allows to submit links... 
-
+    //When /links --> allows to submit links...
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
     $httpProvider.interceptors.push('AttachTokens');
