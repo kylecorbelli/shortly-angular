@@ -23,7 +23,11 @@ angular.module('shortly', [
     .when('/shorten', {
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
-    });
+    })
+    .when('/logout',{
+      templateUrl: 'app/auth/signin.html',
+      controller: 'AuthController'
+    })
 
 
     // Your code here
