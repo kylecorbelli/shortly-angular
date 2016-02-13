@@ -1,9 +1,10 @@
 <div id='container' ng-controller="ShortenController">
 <!-- Your code here -->
   <h1>Yo dawG</h1>
-  <form ng-submit="addLink()" novalidate>
-    <input type="url" ng-model="newLink"  required />
-    <button>Click a homie</button>
+  <form name="addlink" ng-submit="addLink()" novalidate>
+    <input name="form" type="url" ng-model="newLink"  required />
+    <button ng-disabled='addlink.$invalid'>Click a homie</button>
+    <div class='error' ng-show="addlink.form.$error.required && addlink.form.$touched">WHAT'S UP DAWG?</div>
   </form>
 
 </div>

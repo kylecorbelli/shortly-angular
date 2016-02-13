@@ -13,9 +13,8 @@ angular.module('shortly.shorten', [])
     console.log($scope.newLink);
     Links.addOne($scope.newLink)
       .then(function (data) {
+        $location.path('/links')
       });
-    // $scope.data.push($scope.newLink);
-    //$scope.getAll();
   };
 
 });
