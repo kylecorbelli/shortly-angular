@@ -5,12 +5,10 @@ angular.module('shortly.shorten', [])
   $scope.link = {};
 
   if (!Auth.isAuth()) {
-    console.log('stay out my cookie jar');
     $location.path('/signin');
   }
 
-  $scope.addLink = function () {
-    console.log($scope.newLink);
+  $scope.addLink = function () 
     Links.addOne($scope.newLink)
       .then(function (data) {
         $location.path('/links');
